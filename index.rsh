@@ -1,7 +1,7 @@
 'reach 0.1';
 
 const [isHand, ROCK, PAPER, SCISSORS] = makeEnum(3);
-const [isOutcome, B_WINS, DRAW, A_WINS] = makeEnum(3);
+const [isOutcome, A_WINS, DRAW, B_WINS] = makeEnum(3);
 
 const winner = (handAlice, handBob) =>
  ((handAlice + (4 - handBob)) % 3);
@@ -35,7 +35,7 @@ export const main = Reach.App(() => {
     ...Player,
     acceptWager: Fun([UInt], Null),
   });
-  deploy();
+  init();
 
   const informTimeout = () => {
     each([Alice, Bob], () => {
